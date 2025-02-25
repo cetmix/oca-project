@@ -23,6 +23,7 @@ class PortalProjectTask(ProjectCustomerPortal):
             'status': {'input': 'status', 'label': _('Search in Status'), 'order': 5},
             'priority': {'input': 'priority', 'label': _('Search in Priority'), 'order': 7},
             'message': {'input': 'message', 'label': _('Search in Messages'), 'order': 11},
+            'customer': {'input': 'customer', 'label': _('Search in Customer'), 'order': 8},
         }
         if milestones_allowed:
             values['milestone'] = {'input': 'milestone', 'label': _('Search in Milestone'), 'order': 6}

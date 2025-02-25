@@ -1,124 +1,66 @@
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Module name</h2>
-            <p>This module was written to extend the functionality of ... to support ... and allow you to ...</p>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Installation</h2>
-        </div>
-        <div class="oe_span6">
-            <p class="oe_mt32">To install this module, you need to:
-                <ul>
-                    <li>...</li>
-                </ul>
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot">
-                <a href="https://www.odoo.com/saas_master/demo?lang=en_US&module=crm">
-                    <img src="crm_sc_01.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Configuration</h2>
-        </div>
-        <div class="oe_span6">
-            <p class="oe_mt32">To configure this module, you need to:
-                <ul>
-                    <li>...</li>
-                </ul>
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot">
-                <a href="https://www.odoo.com/saas_master/demo?lang=en_US&module=crm">
-                    <img src="crm_sc_01.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Usage</h2>
-        </div>
-        <div class="oe_span6">
-            <p class="oe_mt32">To use this module, you need to:
-                <ul>
-                    <li>...</li>
-                </ul>
-            </p>
-            <p class="oe_mt32">For further information, please visit:
-                <ul>
-                    <li><a href="https://www.odoo.com/forum/help-1">https://www.odoo.com/forum/help-1</a></li>
-                </ul>
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot">
-                <a href="https://www.odoo.com/saas_master/demo?lang=en_US&module=crm">
-                    <img src="crm_sc_01.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Known issues / Roadmap</h2>
-        </div>
-        <div class="oe_span6">
-            <p class="oe_mt32">
-                <ul>
-                    <li>...</li>
-                </ul>
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot">
-                <a href="https://www.odoo.com/saas_master/demo?lang=en_US&module=crm">
-                    <img src="crm_sc_01.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Credits</h2>
-        </div>
-        <div class="oe_span12">
-            <h3>Contributors</h3>
-            <ul>
-                <li>Firstname Lastname &lt;<a href="mailto:email.address@example.com">email.address@example.com</a>&gt;</li>
-            </ul>
-        </div>
-        <div class="oe_span12">
-            <h3>Maintainer</h3>
-            <p>
-                This module is maintained by the OCA.<br/>
-                OCA, or the Odoo Community Association, is a nonprofit organization whose mission is to support the collaborative development of Odoo features and promote its widespread use.<br/>
-                To contribute to this module, please visit <a href="http://odoo-community.org">http://odoo-community.org</a>.<br/>
-                <a href="http://odoo-community.org"><img class="oe_picture oe_centered" src="http://odoo-community.org/logo.png"></a>
-            </p>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Task Code Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Project Task Code Portal</h1>
+  <p>
+    This module implements task codes in the portal by replacing internal task IDs with human-readable codes.
+    It enhances the customer portal by providing clear task references and improving overall usability.
+  </p>
+  
+  <h2>Key Features</h2>
+  <ul>
+    <li>Use task codes instead of IDs in portal URLs</li>
+    <li>Search for tasks by their unique code in portal filters</li>
+    <li>Display task codes in both task list and detailed views</li>
+    <li>Maintains backward compatibility with existing ID-based routes</li>
+    <li>Includes comprehensive documentation for configuration and usage</li>
+  </ul>
+  
+  <h2>Usage</h2>
+  <p>
+    Once installed and configured, the module modifies portal URLs as follows:
+  </p>
+  <ul>
+    <li><strong>Before:</strong> <code>https://example.com/my/tasks/&lt;task_id&gt;</code></li>
+    <li><strong>After:</strong> <code>https://example.com/my/tasks/&lt;task_code&gt;</code></li>
+  </ul>
+  <p>
+    Portal users can now easily share and reference tasks using meaningful codes rather than numerical IDs.
+  </p>
+  
+  <h2>Installation &amp; Configuration</h2>
+  <p>
+    To install the module, copy it into your Odoo <code>addons</code> directory, ensure that all dependencies are met (e.g., <code>project_task_code</code> and <code>portal</code>), and restart the Odoo server.
+    Detailed configuration instructions are provided in the module documentation.
+  </p>
+  
+  <h2>Context</h2>
+  <p>
+    This module addresses the need for client-friendly task references in the portal. It was developed to overcome the limitations of using non-intuitive task IDs by introducing unique, human-readable task codes.
+    This results in improved communication, easier task tracking, and enhanced navigation for end users.
+  </p>
+</body>
+</html>
