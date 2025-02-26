@@ -8,18 +8,11 @@
     "category": "Project",
     "website": "https://github.com/OCA/project",
     "author": "Cetmix OÜ, Odoo Community Association (OCA)",
-    "maintainers": ["halbtonjazz"],
     "license": "AGPL-3",
-    "application": False,
-    "installable": True,
     "depends": [
         "project_task_code",
-        "portal",
     ],
     "data": [
         "templates/portal_templates.xml",
-    ],
-    "test": [
-        "tests/test_portal.py"
     ],
 }

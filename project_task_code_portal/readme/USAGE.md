@@ -1,5 +1,3 @@
-# How to Use Project Task Code Portal
-
 This module will replace the "ID" field with the "Code" in the following portal views:
 
 - Task list (including the project task list)

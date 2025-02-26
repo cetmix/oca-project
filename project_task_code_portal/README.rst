@@ -28,9 +28,6 @@ Project Task Code Portal
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Description
-===========
-
 This module implements task codes in the portal. It allows users to:
 
 - Use task codes instead of IDs in portal URLs.
@@ -44,9 +41,6 @@ This module implements task codes in the portal. It allows users to:
 
 Use Cases / Context
 ===================
-
-Context for Project Task Code Portal
-====================================
 
 Business Need
 -------------
@@ -70,38 +64,10 @@ Use Cases
 - Clients can directly access a task via a URL containing the task code.
 - Support teams can quickly locate a task using its unique identifier.
 
-Installation
-============
-
-Installation Instructions
-=========================
-
-To install the module, follow these steps:
-
-1. Download the module into your Odoo ``addons`` directory.
-2. Ensure all dependencies specified in the ``manifest.py`` (e.g.,
-   ``project_task_code`` and ``portal``) are installed.
-3. Restart the Odoo server.
-4. Activate Developer Mode, update the module list, and install
-   **Project Task Code Portal**.
-
 Configuration
 =============
 
-Configuration of Project Task Code Portal
-=========================================
-
-To configure the module, follow these steps:
-
-1. Go to **Apps** and install the **Project Task Code Portal** module.
-2. If necessary, enable developer mode by navigating to **Settings** >
-   **Activate Developer Mode**.
-3. Go to **Settings** > **Technical Settings** > **User Interface** to
-   adjust display settings for task codes.
-4. Save your changes and restart the Odoo server if required.
-
-*Note: A server restart might be needed after modifying the
-configuration settings.*
+No configuration is required.
 
 Usage
 =====
@@ -147,12 +113,10 @@ Authors
 Contributors
 ------------
 
-Contributors
-------------
+- `Cetmix <https://cetmix.com/>`__:
 
-**Cetmix (<cetmix.com>)**
-
-- **Anatol Mikheev** Developer working on the module
+  - Ivan Sokolov
+  - Anatol Mikheev
 
 Maintainers
 -----------
@@ -166,14 +130,6 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
-
-.. |maintainer-halbtonjazz| image:: https://github.com/halbtonjazz.png?size=40px
-    :target: https://github.com/halbtonjazz
-    :alt: halbtonjazz
-
-Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
-
-|maintainer-halbtonjazz| 
 
 This module is part of the `OCA/project <https://github.com/OCA/project/tree/16.0/project_task_code_portal>`_ project on GitHub.
 

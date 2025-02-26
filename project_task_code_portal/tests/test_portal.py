@@ -1,11 +1,14 @@
 # Copyright 2025 Cetmix OÜ
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from lxml import html
+
 from odoo import Command, tools
 from odoo.tests import tagged
+
 from odoo.addons.base.tests.common import HttpCaseWithUserPortal
 from odoo.addons.project.tests.test_access_rights import TestProjectPortalCommon
-from lxml import html
+
 
 @tagged("-at_install", "post_install")
 class TestPortalProjectTaskCode(TestProjectPortalCommon, HttpCaseWithUserPortal):
@@ -13,13 +16,15 @@ class TestPortalProjectTaskCode(TestProjectPortalCommon, HttpCaseWithUserPortal)
     def setUpClass(cls):
         super(TestPortalProjectTaskCode, cls).setUpClass()
         cls.task_1.project_id.privacy_visibility = "portal"
-        task_wizard = cls.env['portal.share'].create({
-            'res_model': 'project.task',
-            'res_id': cls.task_1.id,
-            'partner_ids': [
-                Command.link(cls.partner_portal.id),
-            ],
-        })
+        task_wizard = cls.env["portal.share"].create(
+            {
+                "res_model": "project.task",
+                "res_id": cls.task_1.id,
+                "partner_ids": [
+                    Command.link(cls.partner_portal.id),
+                ],
+            }
+        )
         task_wizard.action_send_mail()
 
         cls.host = "127.0.0.1"
@@ -32,18 +37,24 @@ class TestPortalProjectTaskCode(TestProjectPortalCommon, HttpCaseWithUserPortal)
         response = self.url_open(self.base_url)
         content = response.content
         tree = html.fromstring(content)
-        spans = tree.xpath("//td[contains(@class, 'text-start') and contains(., '#')]//span")
+        spans = tree.xpath(
+            "//td[contains(@class, 'text-start') and contains(., '#')]//span"
+        )
         list_tasks_code = [s.text for s in spans]
         self.assertIn(self.task_1.code, list_tasks_code)
-        link = tree.xpath(f"//td[a/span[contains(text(), '{self.task_1.name}')]]//a")[0].attrib['href']
-        self.assertEqual(link,self.url_task_code_pattern.format(self.task_1.code))
+        link = tree.xpath(f"//td[a/span[contains(text(), '{self.task_1.name}')]]//a")[
+            0
+        ].attrib["href"]
+        self.assertEqual(link, self.url_task_code_pattern.format(self.task_1.code))
 
     def test_portal_task_access(self):
         self.authenticate("portal", "portal")
         response = self.url_open(self.base_url + self.task_1.code)
         content = response.content
         tree = html.fromstring(content)
-        spans = tree.xpath("//small[contains(@class, 'text-muted') and contains(@class, 'd-md-inline')]//span")
+        spans = tree.xpath(
+            "//small[contains(@class, 'text-muted') and contains(@class, 'd-md-inline')]//span"
+        )
         list_tasks_code = [s.text for s in spans]
         self.assertIn(self.task_1.code, list_tasks_code)
 
@@ -60,10 +71,15 @@ class TestPortalProjectTaskCode(TestProjectPortalCommon, HttpCaseWithUserPortal)
         response = self.url_open(self.base_url[:-1] + query_params)
         content = response.content
         tree = html.fromstring(content)
-        spans = tree.xpath("//td[contains(@class, 'text-start') and contains(., '#')]//span")
+        spans = tree.xpath(
+            "//td[contains(@class, 'text-start') and contains(., '#')]//span"
+        )
         list_tasks_code = [s.text for s in spans]
         self.assertIn(task_code, list_tasks_code)
-        link = tree.xpath(f"//td[a/span[contains(text(), '{self.task_1.name}')]]//a")[0].attrib['href']
-        self.assertEqual(link, self.url_task_code_pattern.format(self.task_1.code)[:-1] + query_params)
-
-
+        link = tree.xpath(f"//td[a/span[contains(text(), '{self.task_1.name}')]]//a")[
+            0
+        ].attrib["href"]
+        self.assertEqual(
+            link,
+            self.url_task_code_pattern.format(self.task_1.code)[:-1] + query_params,
+        )
